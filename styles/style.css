@@ -1,0 +1,189 @@
+/*
+*Ludo styling By Efosa Okpugie
+*Pc version 1.0.0
+*/
+
+.outter-body {
+	width: 600px;
+	height: 600px;
+	border: 1px solid black;
+	margin-left: 15%;
+}
+
+.seedset-one,.seedset-two,.seedset-three,.seedset-four {
+	width: 233px;
+	height: 233px;
+	border: 1px solid black;
+}
+
+.seedset-one {
+	margin-left: 2.4%;
+	border: 10px solid red;
+	background-image: url(../images/messi.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%
+}
+
+.seedset-two {
+	border: 10px solid green;
+	background-image: url(../images/griezmann.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%
+}
+
+.seedset-three {
+	margin-left: 2.4%;
+	border: 10px solid blue;
+	background-image: url(../images/ororo.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%
+}
+
+.seedset-four {
+	border: 10px solid yellow;
+	background-image: url(../images/neymar.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%
+}
+
+.inner-body {
+	margin-left: 1%;
+	margin-top:1%;
+	border-bottom: 2px solid black;
+	border: 1px solid black;
+	width:580px;
+	height: 580px;
+}
+
+.road-channel-one, .road-channel-four {
+	width: 112.5px;
+	height: 233px;
+	padding: 2px;
+	border: 1px solid black;
+}
+
+.road-channel-three, .road-channel-two {
+	width: 233px;
+	height: 113.1px;
+	border: 1px solid black;
+}
+
+.road-channel-two {
+	margin-left: 2.4%;
+}
+
+.dice-container {
+	width: 112.2px;
+	height: 113.1px;
+	border: 1px solid skyblue;
+	background-image: url(../images/creator.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.path-one, .path-two, .path-three {
+	width: 37.5px;
+	height:38.8333px;
+	border:1px solid black;
+}
+
+.cube-one, .cube-two, .cube-three, .cube-four, .cube-five, .cube-six {
+	margin-left: -3%;
+	margin-top: -2%;
+}
+
+.path-one-h, .path-two-h, .path-three-h, .path-four-h, .path-five-h, .path-six-h {
+	width: 38.5px;
+	height: 37.5px;
+	border:1px solid black;
+}
+
+.seed {
+    display:block;
+    width:35px;
+    height:35px;
+    line-height:37px;
+    border-radius: 50%;
+    border:1px solid black;
+    font-size:20px;
+    font-weight:bold;
+    position: relative;
+}
+
+.seed-green {
+	background-color: green
+}
+
+.seed-red {
+	background-color: red;
+}
+
+.seed-blue {
+	background-color: blue;
+}
+
+.seed-yellow {
+	background-color: yellow;
+}
+
+.seed-one-r, .seed-one-g, .seed-one-b, .seed-one-y {
+	margin-top: 15%;
+	margin-left: 15%;
+}
+
+.seed-two-r, .seed-two-g, .seed-two-b, .seed-two-y {
+	margin-top: 15%;
+}
+
+.seed-three-r, .seed-three-g, .seed-three-b, .seed-three-y {
+	margin-top: 30%;
+	margin-left: 15%;
+}
+
+.seed-four-r, .seed-four-g, .seed-four-b, .seed-four-y {
+	margin-top: 30%;
+}
+
+.dices {
+	margin-top: 50%;
+	margin-left: -18%;
+}
+
+.dice {
+	font-size: 2em;
+}
+
+.credit-text {
+	background-color: skyblue;
+	margin-top: 25%;
+	font-family: georgia;
+	font-size: 1em;
+}
+
+.outcome-one, .outcome-two, .outcome-three {
+	width: 40px;
+	height: 40px;
+	margin-left: 20%;
+	border: 1px solid brown;
+	font-size: 2em;
+}
+
+/*
+*styles below are manipulated using jquery
+*/
+.animate {
+	animation-name: indicate-seed-can-be-moved;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+.animate-move {
+	margin-left: -260%;
+}
+
+@keyframes indicate-seed-can-be-moved {
+    0%   {border:2px solid skyblue;}
+    25% {border: 2px dotted skyblue;}
+    50%  {border:2px solid skyblue;}
+    100%  {border:2px dotted skyblue;}
+}
