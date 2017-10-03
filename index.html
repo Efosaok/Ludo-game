@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--All stylesheets required-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="./styles/style.css">
+	<link rel="stylesheet" type="text/css" href="./styles/dice.css">
+
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+	<script type="text/javascript" src='./scripts/gameplay.js'></script>
+</head>
+<!-- Sound heard when dice is tossed -->
+<audio id='shakingdice'>
+	<source src="./sounds/diceshake.mp3" type="audio/mpeg">
+	Your browser does not support audio
+</audio>
+<p id='message'></p>
+
+<div class="container-fluid">
+	<div class='outter-body'>
+		<div class='inner-body'>
+			<!-- this is the first row,a two seed set and a seed path,the red and green part respectively -->
+			<div class='row firstrow'>
+				<!-- red seeds set containing four red seeds -->
+				<div class='seedset-one col-xs-5'>
+					<div class="row seed-row-one">
+						<div class='seed-position seed-one-r col-xs-5'><div class="r seed seed-red seed-red-one"></div></div>
+						<div class='seed-position seed-two-r col-xs-5'><div class="r seed seed-red seed-red-two"></div></div>
+					</div>
+					<div class="row seed-row-two">
+						<div class='seed-position seed-three-r col-xs-5'><div class="r seed seed-red seed-red-three"></div></div>
+						<div class='seed-position seed-four-r col-xs-5'><div class="r seed seed-red seed-red-four"></div></div>
+					</div>
+				</div>
+
+				<!-- path of seeds voyage inbetween the red seed-set and green seed-set-->
+				<div class='road-channel-one col-xs-2'>
+					<div class="row cube-one">
+						<div class='path-one col-xs-4 path-red-12'></div>
+						<div class='path-two col-xs-4 path-red-11'></div>
+						<div class='path-three col-xs-4 path-red-10'></div>
+					</div>
+					<div class="row cube-two">
+						<div class='path-one col-xs-4 path-red-9'></div>
+						<div class='path-two col-xs-4 path-green-home-0' style="background-color: green"></div>
+						<div class='path-three col-xs-4 path-green-0' style="background-color: green">
+						</div>
+					</div>
+					<div class="row cube-three">
+						<div class='path-one col-xs-4 path-red-8'></div>
+						<div class='path-two col-xs-4 path-green-home-1' style="background-color: green"></div>
+						<div class='path-three col-xs-4 path-green-1'></div>
+					</div>
+					<div class="row cube-four">
+						<div class='path-one col-xs-4 path-red-7'></div>
+						<div class='path-two col-xs-4 path-green-home-2' style="background-color: green"></div>
+						<div class='path-three col-xs-4 path-green-2'></div>
+					</div>
+					<div class="row cube-five">
+						<div class='path-one col-xs-4 path-red-6'></div>
+						<div class='path-two col-xs-4 path-green-home-3' style="background-color: green"></div>
+						<div class='path-three col-xs-4 path-green-3'></div>
+					</div>
+					<div class="row cube-six">
+						<div class='path-one col-xs-4 path-red-5'></div>
+						<div class='path-two col-xs-4 path-green-home-4' style="background-color: green"></div>
+						<div class='path-three col-xs-4 path-green-4'></div>
+					</div>
+				</div>
+
+				<!-- red seed set-->
+				<div class='seedset-two col-xs-5'>
+					<div class="row seed-row-one">
+						<div class='seed-position seed-one-g col-xs-5'><div class="g seed seed-green seed-green-one"></div></div>
+						<div class='seed-position seed-two-g col-xs-5'><div class="g seed seed-green seed-green-two"></div></div>
+					</div>
+					<div class="row seed-row-two">
+						<div class='seed-position seed-three-g col-xs-5'><div class="g seed seed-green seed-green-three"></div></div>
+						<div class='seed-position seed-four-g col-xs-5'><div class="g seed seed-green seed-green-four"></div></div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class='row'>
+				<div class='road-channel-two col-xs-5'>
+					<div class="row row-horizontal-one">
+						<div class='path-one-h col-xs-2 path-blue-12'></div>
+						<div class='path-two-h col-xs-2 path-red-0' style="background-color: red"></div>
+						<div class='path-three-h col-xs-2 path-red-1'></div>
+						<div class='path-four-h col-xs-2 path-red-2'></div>
+						<div class='path-five-h col-xs-2 path-red-3'></div>
+						<div class='path-six-h col-xs-2 path-red-4'></div>
+					</div>
+					<div class="row row-horizontal-two">
+						<div class='path-one-h col-xs-2 path-blue-11'></div>
+						<div class='path-two-h col-xs-2 path-red-home-0' style="background-color: red"></div>
+						<div class='path-three-h col-xs-2 path-red-home-1' style="background-color: red"></div>
+						<div class='path-four-h col-xs-2 path-red-home-2' style="background-color: red"></div>
+						<div class='path-five-h col-xs-2 path-red-home-3' style="background-color: red"></div>
+						<div class='path-six-h col-xs-2 path-red-home-4' style="background-color: red"></div>
+					</div>
+					<div class="row row-horizontal-three">
+						<div class='path-one-h col-xs-2 path-blue-10'></div>
+						<div class='path-two-h col-xs-2 path-blue-9'></div>
+						<div class='path-three-h col-xs-2 path-blue-8'></div>
+						<div class='path-four-h col-xs-2 path-blue-7'></div>
+						<div class='path-five-h col-xs-2 path-blue-6'></div>
+						<div class='path-six-h col-xs-2 path-blue-5'></div>
+					</div>
+				</div>
+
+				<div class='dice-container col-xs-2'>
+					<div class="row dices">
+						<div class='dice-one-position col-xs-6'><div class='dice dice-4' id="dice-one"></div></div>
+						<div class='dice-one-position col-xs-6'><div class='dice dice-4' id='dice-two'></div></div>
+					</div>
+					<div class='credit-text'><p class="text-center">by Efosa</p></div>
+				</div>
+
+				<div class='road-channel-three col-xs-5'>
+					<div class="row row-horizontal-one">
+						<div class='path-one-h col-xs-2 path-green-5'></div>
+						<div class='path-two-h col-xs-2 path-green-6'></div>
+						<div class='path-three-h col-xs-2 path-green-7'></div>
+						<div class='path-four-h col-xs-2 path-green-8'></div>
+						<div class='path-five-h col-xs-2 path-green-9'></div>
+						<div class='path-six-h col-xs-2 path-green-10'></div>
+					</div>
+					<div class="row row-horizontal-two">
+						<div class='path-one-h col-xs-2 path-yellow-home-4' style="background-color: yellow"></div>
+						<div class='path-two-h col-xs-2 path-yellow-home-3' style="background-color: yellow"></div>
+						<div class='path-three-h col-xs-2 path-yellow-home-2' style="background-color: yellow"></div>
+						<div class='path-four-h col-xs-2 path-yellow-home-1' style="background-color: yellow"></div>
+						<div class='path-five-h col-xs-2 path-yellow-home-0' style="background-color: yellow"></div>
+						<div class='path-six-h col-xs-2 path-green-11'></div>
+					</div>
+					<div class="row row-horizontal-three">
+						<div class='path-one-h col-xs-2 path-yellow-4'></div>
+						<div class='path-two-h col-xs-2 path-yellow-3'></div>
+						<div class='path-three-h col-xs-2 path-yellow-2'></div>
+						<div class='path-four-h col-xs-2 path-yellow-1'></div>
+						<div class='path-five-h col-xs-2 path-yellow-0' style="background-color: yellow"></div>
+						<div class='path-six-h col-xs-2 path-green-12'></div>
+					</div>
+				</div>
+			</div>
+
+			<div class='row'>
+				<div class='seedset-three col-xs-5'>
+					<div class="row seed-row-one">
+						<div class='seed-position seed-one-y col-xs-5'><div class="b seed seed-blue seed-blue-one"></div></div>
+						<div class='seed-position seed-two-y col-xs-5'><div class="b seed seed-blue seed-blue-two"></div></div>
+					</div>
+					<div class="row seed-row-two">
+						<div class='seed-position seed-three-y col-xs-5'><div class="b seed seed-blue seed-blue-three"></div></div>
+						<div class='seed-position seed-four-y col-xs-5'><div class="b seed seed-blue seed-blue-four"></div></div>
+					</div>
+				</div>
+
+				<div class='road-channel-four col-xs-2'>
+					<div class="row cube-one">
+						<div class='path-one col-xs-4 path-blue-4'></div>
+						<div class='path-two col-xs-4 path-blue-home-4' style="background-color: blue"></div>
+						<div class='path-three col-xs-4 path-yellow-5'></div>
+					</div>
+					<div class="row cube-two">
+						<div class='path-one col-xs-4 path-blue-3'></div>
+						<div class='path-two col-xs-4 path-blue-home-3' style="background-color: blue"></div>
+						<div class='path-three col-xs-4 path-yellow-6'></div>
+					</div>
+					<div class="row cube-three">
+						<div class='path-one col-xs-4 path-blue-2'></div>
+						<div class='path-two col-xs-4 path-blue-home-2' style="background-color: blue"></div>
+						<div class='path-three col-xs-4 path-yellow-7'></div>
+					</div>
+					<div class="row cube-four">
+						<div class='path-one col-xs-4 path-blue-1'></div>
+						<div class='path-two col-xs-4 path-blue-home-1' style="background-color: blue"></div>
+						<div class='path-three col-xs-4 path-yellow-8'></div>
+					</div>
+					<div class="row cube-five">
+						<div class='path-one col-xs-4 path-blue-0' style="background-color: blue"></div>
+						<div class='path-two col-xs-4 path-blue-home-0' style="background-color: blue"></div>
+						<div class='path-three col-xs-4 path-yellow-9'></div>
+					</div>
+					<div class="row cube-two">
+						<div class='path-one col-xs-4 path-yellow-10'></div>
+						<div class='path-two col-xs-4 path-yellow-11'></div>
+						<div class='path-three col-xs-4 path-yellow-12'></div>
+					</div>
+				</div>
+
+				<div class='seedset-four col-xs-5'>
+					<div class="row seed-row-one">
+						<div class='seed-position seed-one-b col-xs-5'><div class="y seed seed-yellow seed-yellow-one"></div></div>
+						<div class='seed-position seed-two-b col-xs-5'><div class="y seed seed-yellow seed-yellow-two"></div></div>
+					</div>
+					<div class="row seed-row-two">
+						<div class='seed-position seed-three-b col-xs-5'><div class="y seed seed-yellow seed-yellow-three"></div></div>
+						<div class='seed-position seed-four-b col-xs-5'><div class="y seed seed-yellow seed-yellow-four"></div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='row outcomes'>
+		<div class='outcome-one col-xs-4'></div>
+		<div class='outcome-two col-xs-4'></div>
+		<div class='outcome-three col-xs-4'></div>
+	</div>
+</div>
+
+
+</html>
